@@ -1,4 +1,4 @@
-# Vu Truong ? Embedded Software Engineer  
+# Vu Truong - Embedded Software Engineer  
 My portfolio: https://truongvanvuembedded.github.io
 
 ## About
