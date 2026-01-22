@@ -308,6 +308,39 @@ img {
   border-radius: 0.5rem;
 }
 
+/* ===== Experience =====*/
+.experience__data {
+	margin-bottom: 2rem;
+}
+
+.experience__names {
+	display: flex;
+	align-items: center;
+}
+
+.experience__icon {
+	font-size: 2rem;
+	color: var(--first-color);
+	margin-right: 1rem;
+}
+
+.experience__name {
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.experience__company {
+	display: block;
+	font-size: 0.9rem;
+	color: #666;
+	margin: 0.3rem 0;
+}
+
+.experience__text {
+	font-size: 0.9rem;
+	line-height: 1.4;
+}
+
 /* ===== WORK =====*/
 .work__container {
   row-gap: 2rem;
