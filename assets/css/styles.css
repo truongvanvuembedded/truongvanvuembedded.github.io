@@ -215,11 +215,13 @@ img {
 }
 .home__blob {
   fill: var(--first-color);
-}
-.home__blob-img {
-  width: 360px;
+  transform: translateX(70px);
 }
 
+.home__blob-img {
+  transform: translateY(-70px);
+  width: 360px;
+}
 /*BUTTONS*/
 .button {
   display: inline-block;
