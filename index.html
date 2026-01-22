@@ -44,10 +44,18 @@
 			</div>
 
 			<div class="home__social">
-				<a href="https://www.linkedin.com/in/vu-truong-van-1b9291271/" class="home__social-icon"><i
-						class='bx bxl-linkedin'></i></a>
-				<a href="https://github.com/truongvanvuembedded" class="home__social-icon"><i
-						class='bx bxl-github'></i></a>
+				<a href="https://www.linkedin.com/in/vu-truong-van-1b9291271/" class="home__social-icon">
+					<i class='bx bxl-linkedin'></i>
+				</a>
+				<a href="https://github.com/truongvanvuembedded" class="home__social-icon">
+					<i class='bx bxl-github'></i>
+				</a>
+				<a href="https://www.facebook.com/vanvu.truong.501" class="home__social-icon">
+					<i class='bx bxl-facebook'></i>
+				</a>
+				<a href="mailto:truongvanvuvta1@gmail.com" class="home__social-icon">
+					<i class='bx bx-envelope'></i>
+				</a>
 			</div>
 
 			<div class="home__img">
@@ -75,7 +83,7 @@
 						I am an Embedded Software Engineer with a background in Mechatronics Engineering,
 						graduated from Danang University of Science and Technology.<br><br>
 
-						I have over 2 years of experience in embedded software development and testing,
+						I have 3 years of experience in embedded software development and evaluation,
 						working on real-world products such as IoT systems, MPP chargers, and E-bike
 						controllers.<br><br>
 
@@ -93,37 +101,84 @@
 			<div class="skills__container bd-grid">
 				<div>
 
+					<!-- Programming Languages -->
 					<div class="skills__data">
 						<div class="skills__names">
-							<i class='bx bx-chip skills__icon'></i>
-							<span class="skills__name">C / C++</span>
+							<i class='bx bx-code-alt skills__icon'></i>
+							<span class="skills__name">C / C++ / Python</span>
 						</div>
-						<span class="skills__percentage">90%</span>
 					</div>
 
+					<!-- Embedded Stack / Framework -->
 					<div class="skills__data">
 						<div class="skills__names">
-							<i class='bx bx-cog skills__icon'></i>
-							<span class="skills__name">FreeRTOS</span>
+							<i class='bx bx-layer skills__icon'></i>
+							<span class="skills__name">
+								FreeRTOS / ESP-IDF / STM32 HAL / Renesas SDK / LVGL
+							</span>
 						</div>
-						<span class="skills__percentage">85%</span>
 					</div>
 
+					<!-- Microcontrollers -->
 					<div class="skills__data">
 						<div class="skills__names">
 							<i class='bx bx-microchip skills__icon'></i>
-							<span class="skills__name">ESP32 / ESP-IDF</span>
+							<span class="skills__name">
+								ESP32 / STM32 / Renesas
+							</span>
 						</div>
-						<span class="skills__percentage">85%</span>
 					</div>
 
+					<!-- Wired Communication -->
 					<div class="skills__data">
 						<div class="skills__names">
 							<i class='bx bx-transfer skills__icon'></i>
-							<span class="skills__name">CAN / UART / SPI / I2C</span>
+							<span class="skills__name">
+								CAN / UART / SPI / I2C / RS232 / RS485
+							</span>
 						</div>
-						<span class="skills__percentage">80%</span>
 					</div>
+
+					<!-- Wireless / Networking -->
+					<div class="skills__data">
+						<div class="skills__names">
+							<i class='bx bx-wifi skills__icon'></i>
+							<span class="skills__name">
+								BLE / WiFi / Zigbee
+							</span>
+						</div>
+					</div>
+
+					<!-- Debugging & Testing -->
+					<div class="skills__data">
+						<div class="skills__names">
+							<i class='bx bx-bug skills__icon'></i>
+							<span class="skills__name">
+								JTAG / SWD / Logic Analyzer / Oscilloscope
+							</span>
+						</div>
+					</div>
+
+					<!-- Build & Dev Tools -->
+					<div class="skills__data">
+						<div class="skills__names">
+							<i class='bx bx-wrench skills__icon'></i>
+							<span class="skills__name">
+								Git / Make / CMake
+							</span>
+						</div>
+					</div>
+
+					<!-- Firmware Update -->
+					<div class="skills__data">
+						<div class="skills__names">
+							<i class='bx bx-download skills__icon'></i>
+							<span class="skills__name">
+								OTA / Bootloader
+							</span>
+						</div>
+					</div>
+
 
 				</div>
 				<div>
@@ -131,6 +186,7 @@
 				</div>
 			</div>
 		</section>
+
 
 		<section class="experience section" id="experience">
 			<h2 class="section-title">Experience</h2>
@@ -214,14 +270,15 @@
 		<section class="contact section" id="contact">
 			<h2 class="section-title">Contact</h2>
 			<div class="contact__container bd-grid">
-				<form class="contact__form">
-					<input type="text" placeholder="Name" class="contact__input">
-					<input type="mail" placeholder="Email" class="contact__input">
-					<textarea cols="0" rows="10" class="contact__input"></textarea>
-					<input type="button" value="Send" class="contact__button button">
+				<form id="contact-form" class="contact__form">
+					<input type="text" name="name" placeholder="Name" class="contact__input" required>
+					<input type="email" name="email" placeholder="Email" class="contact__input" required>
+					<textarea name="message" rows="10" placeholder="Message" class="contact__input" required></textarea>
+					<button type="submit" class="contact__button button">Send</button>
 				</form>
 			</div>
 		</section>
+
 	</main>
 
 	<footer class="footer">
@@ -234,6 +291,8 @@
 	</footer>
 
 	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+	<script src="assets/js/contact.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 
