@@ -1,35 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Ebkie Project</title>
-	<link rel="stylesheet" href="../assets/css/styles.css">
+	<meta charset="UTF-8">
+	<title>Ebike Project</title>
+	<link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
 
-	<h1>Vehicle Control Unit</h1>
+<body class="project-page">
 
-	<p>
-		Developed embedded system to parse NMEA GPS data and transmit to cloud.
-		System runs on ESP32 with FreeRTOS and MQTT.
-	</p>
+	<!-- HEADER -->
+	<header class="project-header">
+		<img src="../img/ebike.png" alt="Ebike">
+		<div class="project-header-overlay">
+			<h1>Ebike</h1>
+			<p>Vehicle Control Unit</p>
+		</div>
+	</header>
 
-	<h3>Main Features</h3>
-	<ul>
-		<li>NMEA0183 parsing</li>
-		<li>Real-time location tracking</li>
-		<li>MQTT communication</li>
-		<li>Low power mode</li>
-	</ul>
+	<!-- BODY -->
+	<main class="project-body">
+		<h3>Project Description</h3>
+		<p class="project-desc">
+			Vehicle Control Unit is the main controller of an electric bike system,
+			handling motor inverter control, battery management, vehicle state and user interface.
+		</p>
 
-	<h3>Technologies</h3>
-	<ul>
-		<li>ESP32</li>
-		<li>FreeRTOS</li>
-		<li>C / Python</li>
-		<li>MQTT / TCP-IP</li>
-	</ul>
+		<h3>Main Features</h3>
+		<ul>
+			<li>Requirement analysis</li>
+			<li>Basic and detailed design</li>
+			<li>Software architecture design</li>
+			<li>Create and implement unit, integration, comprehensive, and system tests</li>
+			<li>Develop low-level layers: I2C, UART, CAN, NVS </li>
+			<li>Develop mid-level layers</li>
+			<li>Develop application layer using UML and state machine</li>
+			<li>Design mechanisms to protect and synchronize data between tasks</li>
+			<li>Design and develop update firmware </li>
+		</ul>
 
-	<a href="../index.html">Å© Back to Home</a>
+		<h3>Technologies</h3>
+		<ul>
+			<li>MCU: ESP32</li>
+			<li>RTOS: FreeRTOS</li>
+			<li>Language: C / Python</li>
+			<li>Unit-Test: Ceedling</li>
+		</ul>
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="project-footer">
+		<a href="../../index.html">‚Üê Back to Home</a>
+	</footer>
 
 </body>
+
 </html>
