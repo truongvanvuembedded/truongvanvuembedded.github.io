@@ -104,92 +104,145 @@
 
 		<section class="skills section" id="skills">
 			<h2 class="section-title">Skills</h2>
-			<div class="skills__container bd-grid">
-				<div>
+			<div class="skills__grid bd-grid">
 
-					<!-- Programming Languages -->
-					<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-code-alt skills__icon'></i>
-							<span class="skills__name">C / C++ / Python</span>
-						</div>
+				<!-- Programming Languages -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-code-alt skills__card-icon'></i>
+						<h3 class="skills__card-title">Programming Languages</h3>
 					</div>
-
-					<!-- Embedded Stack / Framework -->
-					<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-layer skills__icon'></i>
-							<span class="skills__name">
-								FreeRTOS / LVGL
-							</span>
-						</div>
+					<div class="skills__tags">
+						<span class="skills__tag">C</span>
+						<span class="skills__tag">C++</span>
+						<span class="skills__tag">Python</span>
+						<span class="skills__tag">Bash</span>
 					</div>
-
-					<!-- Microcontrollers -->
-					<!--<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-microchip skills__icon'></i>
-							<span class="skills__name">
-								ESP32 / STM32 / Renesas
-							</span>
-						</div>
-					</div>-->
-
-					<!-- Wired Communication -->
-					<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-transfer skills__icon'></i>
-							<span class="skills__name">
-								CAN / UART / SPI / I2C / RS232 / RS485
-							</span>
-						</div>
-					</div>
-
-					<!-- Wireless / Networking -->
-					<!--<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-wifi skills__icon'></i>
-							<span class="skills__name">
-								BLE / WiFi / Zigbee
-							</span>
-						</div>
-					</div>-->
-
-					<!-- Debugging & Testing -->
-					<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-bug skills__icon'></i>
-							<span class="skills__name">
-								JTAG / SWD / Logic Analyzer / Oscilloscope
-							</span>
-						</div>
-					</div>
-
-					<!-- Build & Dev Tools -->
-					<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-wrench skills__icon'></i>
-							<span class="skills__name">
-								Git / Make / CMake
-							</span>
-						</div>
-					</div>
-
-					<!-- Firmware Update -->
-					<div class="skills__data">
-						<div class="skills__names">
-							<i class='bx bx-download skills__icon'></i>
-							<span class="skills__name">
-								OTA / Bootloader
-							</span>
-						</div>
-					</div>
-
-
 				</div>
-				<div>
-					<img src="assets/img/about/skill.png" alt="" class="skills__img">
+
+				<!-- Embedded Software -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-microchip skills__card-icon'></i>
+						<h3 class="skills__card-title">Embedded Software</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">Bare-metal</span>
+						<span class="skills__tag">FreeRTOS</span>
+						<span class="skills__tag">Event-driven Programming</span>
+						<span class="skills__tag">Firmware Architecture</span>
+						<span class="skills__tag">Driver Development</span>
+					</div>
 				</div>
+
+				<!-- MCUs -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-chip skills__card-icon'></i>
+						<h3 class="skills__card-title">MCUs</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">STM32</span>
+						<span class="skills__tag">ESP32</span>
+						<span class="skills__tag">Renesas</span>
+						<span class="skills__tag">PIC</span>
+						<span class="skills__tag">Arduino</span>
+					</div>
+				</div>
+
+				<!-- Communication Protocols -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-transfer skills__card-icon'></i>
+						<h3 class="skills__card-title">Communication Protocols</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">CAN</span>
+						<span class="skills__tag">UART</span>
+						<span class="skills__tag">SPI</span>
+						<span class="skills__tag">I2C</span>
+						<span class="skills__tag">RS-485</span>
+						<span class="skills__tag">BLE</span>
+						<span class="skills__tag">Wi-Fi</span>
+						<span class="skills__tag">MQTT</span>
+						<span class="skills__tag">HTTP</span>
+						<span class="skills__tag">NMEA 2000</span>
+					</div>
+				</div>
+
+				<!-- Power Electronics -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-flash skills__card-icon'></i>
+						<h3 class="skills__card-title">Power Electronics</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">EV Charger</span>
+						<span class="skills__tag">PFC Boost</span>
+						<span class="skills__tag">LLC Resonant Converter</span>
+						<span class="skills__tag">Battery Charging (CC/CV)</span>
+					</div>
+				</div>
+
+				<!-- IoT & Connectivity -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-wifi skills__card-icon'></i>
+						<h3 class="skills__card-title">IoT &amp; Connectivity</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">GNSS</span>
+						<span class="skills__tag">AssistNow Online/Offline</span>
+						<span class="skills__tag">CloudLocate</span>
+						<span class="skills__tag">CellLocate</span>
+						<span class="skills__tag">Cellular Communication</span>
+					</div>
+				</div>
+
+				<!-- Unit Test -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-check-shield skills__card-icon'></i>
+						<h3 class="skills__card-title">Unit Test</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">Ceedling</span>
+						<span class="skills__tag">Unity</span>
+					</div>
+				</div>
+
+				<!-- Debugging Tools -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-bug skills__card-icon'></i>
+						<h3 class="skills__card-title">Debugging Tools</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">JTAG</span>
+						<span class="skills__tag">SWD</span>
+						<span class="skills__tag">OpenOCD</span>
+						<span class="skills__tag">GDB</span>
+						<span class="skills__tag">Logic Analyzer</span>
+						<span class="skills__tag">Oscilloscope</span>
+						<span class="skills__tag">Vector CANoe</span>
+						<span class="skills__tag">CANalyzer</span>
+						<span class="skills__tag">Kvaser</span>
+					</div>
+				</div>
+
+				<!-- Build & Dev Tools -->
+				<div class="skills__card">
+					<div class="skills__card-header">
+						<i class='bx bx-wrench skills__card-icon'></i>
+						<h3 class="skills__card-title">Build &amp; Dev Tools</h3>
+					</div>
+					<div class="skills__tags">
+						<span class="skills__tag">CMake</span>
+						<span class="skills__tag">Makefile</span>
+						<span class="skills__tag">Docker</span>
+					</div>
+				</div>
+
 			</div>
 		</section>
 
