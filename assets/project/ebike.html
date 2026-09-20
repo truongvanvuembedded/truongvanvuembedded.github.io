@@ -26,29 +26,63 @@
 			It control operation of vehicle, manage battery, control motor inverter, tracking device via GNSS and notify to user via mobile app with cellular.
 		</p>
 
+		<h3>Key Feature</h3>
+		<p class="project-desc">
+		<ul>
+			<li>Centralized control of vehicle operation and system states </li>
+			<li>Control and monitor the Motor Inverter, Battery Management System</li>
+			<li>Monitor vehicle conditions and handle system faults.</li>
+			<li>Tracking device via GNSS and Cellular</li>
+			<li>Display vehicle information and status on an RGB LCD</li>
+		</ul>
+		</p>
+
+		<h3>Role</h3>
+		<p class="project-desc">
+		<ul>
+			<li>Role: Teachnical Lead</li>
+			<li>Period: November 2025 â€“ April 2026</li>
+			<li>Team size: 3</li>
+		</ul>
+		</p>
+
 		<h3>My Responsibilities</h3>
 		<ul>
 			<li>Requirement analysis</li>
-			<li>Software architecture design</li>
-			<li>Create and implement unit, integration, comprehensive, and system tests</li>
-			<li>Develop low-level layers: I2C, UART, CAN, NVS </li>
-			<li>Develop feature: NFC controller, Battery communicate, Motor inverter control, peripheral system, user interface, tracking GNSS and vehicle operations.</li>
-			<li>Design mechanisms to protect and synchronize data between tasks</li>
-			<li>Design and develop update firmware </li>
+			<li>Design Software architecture using UML</li>
+			<li>Create and implement unit, integration (Using Ceedling + Ram Montior application) and sytem test to validate machine behavior against functional specifications</li>
+			<li>Implemented communication interfaces: I2C, UART, CAN between the VCU and other components like RFID, IoExp, IMU, GNSS, Cellular, Battery Control, and Motor Inverter</li>
+			<li>Develop RFID stack base on NCI protocol for communicate with RFID device via multiple protocol like I2C, SPI.</li>
+			<li>Developed a CAN communication stack for managing the Motor Inverter and Battery Manager, with mechanisms to prevent data loss and missed messages.</li>
+			<li>Designed a non-blocking, event-driven I2C communication architecture for multiple tasks using sharing resource, preventing race-condition, deadlocks, priority inversion, and timing requirement.</li>
+			<li>Designed a UART communication mechanism using a ring buffer to reliably handle GNSS and Cellular data and prevent data loss.</li>
+			<li>Implemented mechanisms to protect and synchronize shared data between tasks</li>
+			<li>Design and develop update firmware via CAN protocol follow UDS standard</li>
+			<li>Designed and developed an LVGL-based UI for an RGB LCD display, using SquareLine Studio for UI design and implementation.</li>
+			<li>Developed vehicle features including RFID authentication, lighting system, horn, turn signals, buzzer, and other vehicle I/O functions.</li>
+			<li>Developed telematics features using Cellular/GNSS module for remote monitoring, remote control, and GNSS tracking.</li>
+			<li>Used CANoe to create CAN databases, analyze bus load, and simulate network nodes to validate system behavior before hardware integration.</li>
+			<li>Designed and developed the application layer to manage overall vehicle states and control vehicle operation.</li>
+			<li>Leveraged AI tools to develop automation solutions and tools, significantly reducing task completion time and enhancing overall team productivity</li>
 		</ul>
 
 		<h3>Technologies</h3>
 		<ul>
-			<li>MCU: ESP32</li>
-			<li>RTOS: FreeRTOS</li>
-			<li>Language: C / Python</li>
+			<li>MCU: ESP32S3</li>
+			<li>Stack: FreeRTOS, LVGL, NCI</li>
+			<li>Language: C, C++, Python, UML</li>
 			<li>Unit-Test: Ceedling</li>
+			<li>Protocol: I2C, UART, CAN, RGB, HTTP</li>
+			<li>Modules: RFID, IoExp, GNSS, Cellular, RGB-LCD</li>
+			<li>Hardware: Vector, Kvaser</li>
+			<li>Lab Tools: Oscilloscope, Logic Analyzer, Power Supply, Electric-Load, DMM, Current measuring device</li>
+			<li>Software Tools: VsCode, CANoe, CAN-Analyer, Ram-Monitor, Ublox mCenter, SquareLine Studio, EEZ Studio</li>
 		</ul>
 	</main>
 
 	<!-- FOOTER -->
 	<footer class="project-footer">
-		<a href="../../index.html">â†? Back to Home</a>
+		<a href="../../index.html">Back to Home</a>
 	</footer>
 
 </body>
