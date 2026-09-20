@@ -3,7 +3,8 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Ebike Project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ev-Charger Project</title>
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -21,19 +22,34 @@
 	<!-- BODY -->
 	<main class="project-body">
 		<h3>Project Description</h3>
-		<p class="project-desc">
+		<ul>
 			<li>The off-board EV charger, based on a digital half-bridge LLC topology, uses a mathematical model to
-			achieve high energy density while increasing safety, reducing weight, and improving efficiency.</li>
+				achieve high energy density while increasing safety, reducing weight, and improving efficiency.</li>
 			<li>It supports multiple battery types, and the available charging methods include pre-charge, constant
-			current (CC), constant voltage (CV), constant power (CP), and power exchange via
-			CAN command.</li>
-		</p>
+				current (CC), constant voltage (CV), constant power (CP), and power exchange via CAN command.</li>
+		</ul>
+
+		<ul class="project-meta">
+			<li>
+				<span class="project-meta__label">Role</span>
+				<span class="project-meta__value">Technical Lead</span>
+			</li>
+			<li>
+				<span class="project-meta__label">Period</span>
+				<span class="project-meta__value">May 2026 - August 2026</span>
+			</li>
+			<li>
+				<span class="project-meta__label">Team size</span>
+				<span class="project-meta__value">3</span>
+			</li>
+		</ul>
 
 		<h3>My Responsibilities</h3>
 		<ul>
 			<li>Lead a firmware team of 2-3 engineers throughout the development lifecycle</li>
 			<li>Analyze customer requirements and create software architecture</li>
 			<li>Plan development activities, assign tasks, and conduct code reviews to ensure software quality</li>
+			<li>Implement open loop and close loop PID control output PWM to generate power follow specification</li>
 			<li>Develop embedded firmware for RL78 and RX66T microcontrollers using C</li>
 			<li>Design and implement charging control algorithms</li>
 			<li>Perform firmware integration, system debugging, and hardware bring-up</li>
@@ -45,11 +61,32 @@
 		</ul>
 
 		<h3>Technologies</h3>
-		<ul>
-			<li>MCU: RL78 / RX66T</li>
-			<li>Language: C / Python</li>
-			<li>Unit-Test: Ceedling and gcovr feature</li>
-		</ul>
+		<dl class="tech-list">
+			<div class="tech-list__row">
+				<dt>MCU</dt>
+				<dd>RL78 / RX66T</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Language</dt>
+				<dd>C / Python</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Power domain</dt>
+				<dd>PFC control, LLC inverter</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Unit-Test</dt>
+				<dd>Ceedling and gcovr feature</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Lab Tools</dt>
+				<dd>Oscilloscope, Logic Analyzer, Power Supply, Electric-Load, DMM, Current measuring device</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Software Tools</dt>
+				<dd>CANoe, CAN-Analyer, Ram-Monitor</dd>
+			</div>
+		</dl>
 	</main>
 
 	<!-- FOOTER -->
