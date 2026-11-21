@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ebike Project</title>
+	<title>E-Bike Vehicle Control Unit</title>
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -12,9 +12,9 @@
 
 	<!-- HEADER -->
 	<header class="project-header">
-		<img src="../img/project/ebike.png" alt="Ebike">
+		<img src="../img/project/ebike.png" alt="E-Bike Vehicle Control Unit">
 		<div class="project-header-overlay">
-			<h1>Ebike</h1>
+			<h1>E-Bike Vehicle Control Unit</h1>
 			<p>Vehicle Control Unit</p>
 		</div>
 	</header>
@@ -22,28 +22,21 @@
 	<!-- BODY -->
 	<main class="project-body">
 		<h3>Project Description</h3>
-		<p class="project-desc">
-			Vehicle Control Unit is the main controller of an electric bike system.
-			It control operation of vehicle, manage battery, control motor inverter, tracking device via GNSS and notify to user via mobile app with cellular.
-		</p>
-
-		<h3>Key Feature</h3>
 		<ul>
-			<li>Centralized control of vehicle operation and system states </li>
-			<li>Control and monitor the Motor Inverter, Battery Management System</li>
-			<li>Monitor vehicle conditions and handle system faults.</li>
-			<li>Tracking device via GNSS and Cellular</li>
-			<li>Display vehicle information and status on an RGB LCD</li>
+			<li>The Vehicle Control Unit (VCU) is the main controller of an electric bike, managing vehicle operation,
+				the battery management system and the motor inverter.</li>
+			<li>It provides GNSS tracking and cellular connectivity for remote monitoring and control through a mobile
+				app, and shows vehicle status on an RGB LCD.</li>
 		</ul>
 
 		<ul class="project-meta">
 			<li>
 				<span class="project-meta__label">Role</span>
-				<span class="project-meta__value">Firmware Lead</span>
+				<span class="project-meta__value">Firmware Lead (Phase 1), Firmware Developer</span>
 			</li>
 			<li>
 				<span class="project-meta__label">Period</span>
-				<span class="project-meta__value">November 2025 – April 2026</span>
+				<span class="project-meta__value">Nov 2025 - Apr 2026</span>
 			</li>
 			<li>
 				<span class="project-meta__label">Team size</span>
@@ -51,54 +44,74 @@
 			</li>
 		</ul>
 
+		<h3>Key Features</h3>
+		<ul>
+			<li>Centralized control of vehicle operation and system states</li>
+			<li>Control and monitoring of the motor inverter and battery management system</li>
+			<li>Vehicle condition monitoring and fault handling</li>
+			<li>GNSS tracking and cellular connectivity</li>
+			<li>Vehicle information and status display on an RGB LCD</li>
+		</ul>
+
 		<h3>My Responsibilities</h3>
 		<ul>
-			<li>Requirement analysis</li>
-			<li>Design Software architecture using UML</li>
-			<li>Create and implement unit, integration (Using Ceedling + Ram Montior application) and sytem test to validate machine behavior against functional specifications</li>
-			<li>Implemented communication interfaces: I2C, UART, CAN between the VCU and other components like RFID, IoExp, IMU, GNSS, Cellular, Battery Control, and Motor Inverter</li>
-			<li>Develop RFID stack base on NCI standard for communicate with RFID device via multiple protocol like I2C, SPI.</li>
-			<li>Developed a CAN communication stack for managing the Motor Inverter and Battery Manager, with mechanisms to prevent data loss and missed messages.</li>
-			<li>Designed a non-blocking, event-driven I2C communication architecture for multiple tasks using sharing resource, preventing race-condition, deadlocks, priority inversion, and timing requirement.</li>
-			<li>Designed a UART communication mechanism using a ring buffer to reliably handle GNSS and Cellular data and prevent data loss.</li>
-			<li>Implemented mechanisms to protect and synchronize shared data between tasks</li>
-			<li>Design and develop update firmware via CAN protocol follow UDS standard</li>
-			<li>Designed and developed an LVGL-based UI for an RGB LCD display, using SquareLine Studio for UI design and implementation.</li>
-			<li>Developed vehicle features including RFID authentication, lighting system, horn, turn signals, buzzer, and other vehicle I/O functions.</li>
-			<li>Developed telematics features using Cellular/GNSS module for remote monitoring, remote control, and GNSS tracking.</li>
-			<li>Used CANoe to create CAN databases, analyze bus load, and simulate network nodes to validate system behavior before hardware integration.</li>
-			<li>Designed and developed the application layer to manage overall vehicle states and control vehicle operation.</li>
-			<li>Leveraged AI tools to develop automation solutions and tools, significantly reducing task completion time and enhancing overall team productivity</li>
+			<li>Analyzed requirements and designed the software architecture using UML</li>
+			<li>Designed the application layer that manages vehicle states and operation</li>
+			<li>Developed communication interfaces (I2C, UART, CAN) between the VCU and peripherals, including RFID,
+				GNSS, cellular module, BMS and motor inverter</li>
+			<li>Developed a CAN stack for the motor inverter and BMS, and a firmware update over CAN following the UDS
+				standard</li>
+			<li>Developed an RFID stack based on the NCI standard over I2C and SPI</li>
+			<li>Developed telematics features (remote monitoring, remote control, GNSS tracking) and vehicle I/O
+				functions (RFID authentication, lighting, horn, turn signals)</li>
+			<li>Created unit, integration and system tests (Ceedling, RAM Monitor), and used CANoe to build CAN databases
+				and simulate network nodes before hardware integration</li>
+		</ul>
+
+		<h3>Technical Challenges &amp; Solutions</h3>
+		<ul>
+			<li><strong>Shared I2C and CAN buses across multiple tasks:</strong> several FreeRTOS tasks needed to access
+				the same I2C and CAN buses, which risked race conditions, deadlocks and priority inversion. I designed an
+				event-driven architecture in which a dedicated task owns and controls each bus, and other tasks send
+				events to it instead of accessing the hardware directly. This removes contention on the buses, keeps the
+				tasks decoupled, and meets timing requirements.</li>
+			<li><strong>Reliable GNSS and cellular data over UART:</strong> continuous data streams from the GNSS and
+				cellular modules could be lost when tasks were busy. I designed a ring-buffer-based UART mechanism that
+				receives data in the background and lets tasks process it without losing bytes.</li>
 		</ul>
 
 		<h3>Technologies</h3>
 		<dl class="tech-list">
 			<div class="tech-list__row">
 				<dt>MCU</dt>
-				<dd>ESP32S3</dd>
+				<dd>ESP32-S3</dd>
 			</div>
 			<div class="tech-list__row">
 				<dt>Stack</dt>
-				<dd>FreeRTOS, LVGL, NCI</dd>
+				<dd>FreeRTOS, NCI</dd>
 			</div>
 			<div class="tech-list__row">
 				<dt>Language</dt>
-				<dd>C, C++, Python, UML</dd>
+				<dd>C, C++, Python</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Design</dt>
+				<dd>UML</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Protocol</dt>
+				<dd>CAN, UDS, I2C, SPI, UART</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Modules</dt>
+				<dd>RFID, IO Expander, GNSS, Cellular, RGB LCD</dd>
 			</div>
 			<div class="tech-list__row">
 				<dt>Unit-Test</dt>
 				<dd>Ceedling</dd>
 			</div>
 			<div class="tech-list__row">
-				<dt>Protocol</dt>
-				<dd>I2C, UART, CAN, RGB, HTTP</dd>
-			</div>
-			<div class="tech-list__row">
-				<dt>Modules</dt>
-				<dd>RFID, IoExp, GNSS, Cellular, RGB-LCD</dd>
-			</div>
-			<div class="tech-list__row">
-				<dt>Hardware</dt>
+				<dt>CAN Interfaces</dt>
 				<dd>Vector, Kvaser</dd>
 			</div>
 			<div class="tech-list__row">
@@ -107,7 +120,7 @@
 			</div>
 			<div class="tech-list__row">
 				<dt>Software Tools</dt>
-				<dd>VsCode, CANoe, CAN-Analyer, Ram-Monitor, Ublox mCenter, SquareLine Studio, EEZ Studio</dd>
+				<dd>VS Code, CANoe, CANalyzer, RAM Monitor, u-blox m-center</dd>
 			</div>
 		</dl>
 	</main>
