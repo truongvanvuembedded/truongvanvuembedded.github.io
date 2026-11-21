@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Solar Charging for Golf Carts</title>
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="project-page">
+
+	<!-- HEADER -->
+	<header class="project-header">
+		<img src="../img/project/solar-charger.png" alt="Solar charging for golf carts">
+		<div class="project-header-overlay">
+			<h1>Solar Charging for Golf Carts</h1>
+			<p>Solar Charge Controller</p>
+		</div>
+	</header>
+
+	<!-- BODY -->
+	<main class="project-body">
+		<h3>Project Description</h3>
+		<ul>
+			<li>A solar charge controller for golf carts that charges the vehicle battery from roof-mounted solar panels,
+				extending driving range and reducing dependence on grid charging.</li>
+			<li>It supports multiple battery types with CC/CV charging and communicates with the vehicle control unit
+				(VCU) over CAN.</li>
+		</ul>
+
+		<ul class="project-meta">
+			<li>
+				<span class="project-meta__label">Role</span>
+				<span class="project-meta__value">Firmware Lead</span>
+			</li>
+			<li>
+				<span class="project-meta__label">Period</span>
+				<span class="project-meta__value">Sep 2026 - Present</span>
+			</li>
+			<li>
+				<span class="project-meta__label">Team size</span>
+				<span class="project-meta__value">2</span>
+			</li>
+		</ul>
+
+		<h3>Key Features</h3>
+		<ul>
+			<li>Solar charging with CC/CV control through a dedicated charge controller IC</li>
+			<li>Battery voltage and temperature monitoring with fault protection</li>
+			<li>CAN interface that lets the VCU set the charge current, voltage limit and charge permission</li>
+			<li>Firmware update over CAN with recovery from interrupted updates</li>
+			<li>MPPT control algorithm to maximize power harvested from the solar panels</li>
+		</ul>
+
+		<h3>My Responsibilities</h3>
+		<ul>
+			<li>Lead firmware development from requirements analysis to release</li>
+			<li>Analyzed product requirements and the charge controller IC specification</li>
+			<li>Designed a layered firmware architecture</li>
+			<li>Developed low-level drivers (GPIO, ADC, CAN, I2C), including an interrupt-driven, queue-based
+				asynchronous I2C driver</li>
+			<li>Implemented the charge controller service and transport layers, battery monitoring, calibration data and
+				error handling</li>
+			<li>Added CAN communication with the VCU and charge voltage selection per battery type</li>
+			<li>Implementing firmware reprogramming over CAN using boot swap and the Renesas Flash Self-Programming
+				Library</li>
+			<li>Led integration testing and phase reviews, and coordinated development tasks with the team</li>
+		</ul>
+
+		<h3>Technical Challenges &amp; Solutions</h3>
+		<ul>
+			<li><strong>Non-blocking communication with the charge controller:</strong> blocking I2C transfers kept the
+				CPU waiting and could hang the system when the bus failed. I designed an interrupt-driven, queue-based
+				asynchronous I2C driver with callbacks, which increases processing speed and ensures the bus always
+				recovers after an I2C failure.</li>
+			<li><strong>Safe firmware update on a 48 KB MCU:</strong> limited flash and the risk of a power loss during
+				an update. I defined a manual memory layout with boot clusters and boot swap, so the write program runs
+				from RAM and the previous firmware stays valid until the new image is verified.</li>
+		</ul>
+
+		<h3>Technologies</h3>
+		<dl class="tech-list">
+			<div class="tech-list__row">
+				<dt>MCU</dt>
+				<dd>Renesas RL78</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Language</dt>
+				<dd>C / Python</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Charge controller</dt>
+				<dd>TI BQ25751</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Communication</dt>
+				<dd>CAN, I2C</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Firmware update</dt>
+				<dd>Boot swap, Renesas Flash Self-Programming Library</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Testing</dt>
+				<dd>Unit test specification, integration test</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Lab Tools</dt>
+				<dd>Oscilloscope, DMM, DC Power Supply, Electronic Load, Renesas Emulator</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Software Tools</dt>
+				<dd>Renesas CS+</dd>
+			</div>
+		</dl>
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="project-footer">
+		<a href="../../index.html">Back to Home</a>
+	</footer>
+
+</body>
+
+</html>
