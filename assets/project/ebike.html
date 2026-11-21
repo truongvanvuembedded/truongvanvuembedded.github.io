@@ -32,7 +32,7 @@
 		<ul class="project-meta">
 			<li>
 				<span class="project-meta__label">Role</span>
-				<span class="project-meta__value">Firmware Lead (Phase 1), Firmware Developer</span>
+				<span class="project-meta__value">Firmware Developer</span>
 			</li>
 			<li>
 				<span class="project-meta__label">Period</span>
@@ -70,11 +70,11 @@
 
 		<h3>Technical Challenges &amp; Solutions</h3>
 		<ul>
-			<li><strong>Shared I2C and CAN buses across multiple tasks:</strong> several FreeRTOS tasks needed to access
-				the same I2C and CAN buses, which risked race conditions, deadlocks and priority inversion. I designed an
-				event-driven architecture in which a dedicated task owns and controls each bus, and other tasks send
-				events to it instead of accessing the hardware directly. This removes contention on the buses, keeps the
-				tasks decoupled, and meets timing requirements.</li>
+			<li><strong>Shared CAN bus across multiple tasks:</strong> several FreeRTOS tasks needed to access the same
+				CAN bus, which risked race conditions, deadlocks and priority inversion. I designed an event-driven
+				architecture in which a dedicated task owns and controls the CAN bus, and other tasks send events to it
+				instead of accessing the hardware directly. This removes contention on the bus, keeps the tasks
+				decoupled, and meets timing requirements.</li>
 			<li><strong>Reliable GNSS and cellular data over UART:</strong> continuous data streams from the GNSS and
 				cellular modules could be lost when tasks were busy. I designed a ring-buffer-based UART mechanism that
 				receives data in the background and lets tasks process it without losing bytes.</li>
