@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ev-Charger Project</title>
+	<title>EV Charger AC/DC 800W</title>
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -12,10 +12,10 @@
 
 	<!-- HEADER -->
 	<header class="project-header">
-		<img src="../img/project/ev-charger.png" alt="ev-charger">
+		<img src="../img/project/ev-charger.png" alt="EV Charger AC/DC 800W">
 		<div class="project-header-overlay">
-			<h1>Ev-Charger Ac/Dc</h1>
-			<p>Electrical Charger Ac-Dc</p>
+			<h1>EV Charger AC/DC 800W</h1>
+			<p>Off-board Electric Vehicle Charger</p>
 		</div>
 	</header>
 
@@ -23,20 +23,19 @@
 	<main class="project-body">
 		<h3>Project Description</h3>
 		<ul>
-			<li>The off-board EV charger, based on a digital half-bridge LLC topology, uses a mathematical model to
-				achieve high energy density while increasing safety, reducing weight, and improving efficiency.</li>
-			<li>It supports multiple battery types, and the available charging methods include pre-charge, constant
-				current (CC), constant voltage (CV), constant power (CP), and power exchange via CAN command.</li>
+			<li>An 800 W off-board AC/DC charger for electric vehicles, based on a PFC stage and a digitally controlled
+				half-bridge LLC converter, designed for high efficiency, safety and low weight.</li>
+			<li>It supports multiple battery types and charging modes, and is controlled by the vehicle over CAN.</li>
 		</ul>
 
 		<ul class="project-meta">
 			<li>
 				<span class="project-meta__label">Role</span>
-				<span class="project-meta__value">Firmware Lead</span>
+				<span class="project-meta__value">Firmware Developer</span>
 			</li>
 			<li>
 				<span class="project-meta__label">Period</span>
-				<span class="project-meta__value">May 2026 - August 2026</span>
+				<span class="project-meta__value">May 2026 - Aug 2026</span>
 			</li>
 			<li>
 				<span class="project-meta__label">Team size</span>
@@ -44,28 +43,47 @@
 			</li>
 		</ul>
 
+		<h3>Key Features</h3>
+		<ul>
+			<li>Charging modes: pre-charge, constant current (CC), constant voltage (CV) and constant power (CP)</li>
+			<li>Support for multiple battery types</li>
+			<li>Charging power and limits controlled by the vehicle through CAN commands</li>
+			<li>Digital closed-loop control of the LLC power stage</li>
+			<li>Firmware update over CAN with recovery from interrupted updates</li>
+		</ul>
+
 		<h3>My Responsibilities</h3>
 		<ul>
-			<li>Lead a firmware team of 2-3 engineers throughout the development lifecycle</li>
-			<li>Analyze customer requirements and create software architecture</li>
-			<li>Plan development activities, assign tasks, and conduct code reviews to ensure software quality</li>
-			<li>Implement open loop and close loop PID control output PWM to generate power follow specification</li>
-			<li>Develop embedded firmware for RL78 and RX66T microcontrollers using C</li>
-			<li>Design and implement charging control algorithms</li>
-			<li>Perform firmware integration, system debugging, and hardware bring-up</li>
-			<li>Validate charger performance, evaluate output power and charging characteristics, and optimize system
-				efficiency</li>
-			<li>Create and execute unit, integration, and system tests to verify software functionality and reliability
-			</li>
-			<li>Collaborate with hardware engineers to troubleshoot system issues and support product release</li>
-			<li>Designed and developed a firmware update mechanism over CAN that can recover and re-run the update if a previous update was interrupted.</li>
+			<li>Analyzed customer requirements and contributed to the software architecture</li>
+			<li>Developed embedded firmware in C for Renesas RL78 and RX66T microcontrollers</li>
+			<li>Contributed to the design and development of the PID control loops and the CC/CV/CP charging control
+				algorithms</li>
+			<li>Developed UART communication between the two microcontrollers</li>
+			<li>Developed ADC signal acquisition with digital filtering to reduce measurement noise</li>
+			<li>Implemented calibration data management in data flash to correct measured values</li>
+			<li>Designed and developed a firmware update over CAN that can recover and re-run the update if a previous
+				update was interrupted</li>
+			<li>Performed firmware integration, hardware bring-up and system debugging</li>
+			<li>Created and executed unit, integration and system tests, and worked with hardware engineers to validate
+				the charger and support product release</li>
+		</ul>
+
+		<h3>Technical Challenges &amp; Solutions</h3>
+		<ul>
+			<li><strong>Safe firmware update in the field:</strong> a power loss or communication error during an
+				update could leave the charger unusable. I designed the update over CAN so that an interrupted update
+				is detected and the charger can always recover and re-run the update.</li>
+			<li><strong>Accurate measurements in a noisy power environment:</strong> switching noise from the power
+				stage distorted the ADC readings, and component tolerances caused offset and gain errors between units.
+				I added digital filtering to the ADC acquisition and applied per-unit calibration data stored in data
+				flash, giving the control loops stable and accurate feedback values.</li>
 		</ul>
 
 		<h3>Technologies</h3>
 		<dl class="tech-list">
 			<div class="tech-list__row">
 				<dt>MCU</dt>
-				<dd>RL78 / RX66T</dd>
+				<dd>Renesas RL78 / RX66T</dd>
 			</div>
 			<div class="tech-list__row">
 				<dt>Language</dt>
@@ -73,19 +91,23 @@
 			</div>
 			<div class="tech-list__row">
 				<dt>Power domain</dt>
-				<dd>PFC control, LLC inverter</dd>
+				<dd>PFC, LLC converter, PID control</dd>
+			</div>
+			<div class="tech-list__row">
+				<dt>Signal processing</dt>
+				<dd>Digital filtering, calibration</dd>
 			</div>
 			<div class="tech-list__row">
 				<dt>Unit-Test</dt>
-				<dd>Ceedling and gcovr feature</dd>
+				<dd>Ceedling, gcovr (code coverage)</dd>
 			</div>
 			<div class="tech-list__row">
 				<dt>Lab Tools</dt>
-				<dd>Oscilloscope, Logic Analyzer, Power Supply, Electric-Load, DMM, Current measuring device</dd>
+				<dd>Oscilloscope, Logic Analyzer, DC Power Supply, Electronic Load, DMM, Current Probe</dd>
 			</div>
 			<div class="tech-list__row">
 				<dt>Software Tools</dt>
-				<dd>CANoe, CAN-Analyer, Ram-Monitor</dd>
+				<dd>CANoe, CANalyzer, RAM Monitor</dd>
 			</div>
 		</dl>
 	</main>
